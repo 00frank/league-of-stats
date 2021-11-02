@@ -28,20 +28,5 @@
 }
 
 div.ui.icon.input {
-  /* background-color: red; */
   width: 100%;
-}
-
-.prompt {
-  /* background-color: red; */
-  width: 100% !important;
-  /* margin: 0 12rem !important; */
-}
-
-
-.test {
-  /* background-color: violet; */
-  width: 100%;
-  margin: 0 auto;
-
 }
