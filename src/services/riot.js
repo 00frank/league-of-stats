@@ -1,3 +1,19 @@
+/**
+ * @typedef {Object} Champion
+ * @property {String} version - version of the data retrieved to the champion
+ * @property {String} id - champion's unique id
+ * @property {String} key - a weird key for the champion
+ * @property {String} name - champion's name
+ * @property {String} title - champion's description
+ * @property {String} blurb - little history about the champion
+ * @property {Object} info - initial game stats
+ * @property {Object} image - this is some cool string
+ * @property {Array<String>} tags - the roles the champion is used to play
+ * @property {String} partype - the resource the champion's spells use
+ * @property {Object} stats - a complex object fulfiled with champion's stats
+ */
+
+
 const Constants = {
   VERSION_URL: "https://ddragon.leagueoflegends.com/api/versions.json",
   CHAMPIONS_URL: "http://ddragon.leagueoflegends.com/cdn/{version}/data/es_AR/champion.json",
@@ -27,6 +43,9 @@ function parseChampionsToArray(championsObj) {
   return array;
 }
 
+/**
+ * @returns {Promise<Champion[]>}
+ */
 async function getChampions() {
   let version = await getGameVersion();
   let url = await getChampionsURL(version);
