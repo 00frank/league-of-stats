@@ -12,6 +12,8 @@
 }
 
 .banner img {
+  margin: 0 auto;
+  width: 100%;
   max-width: 592px;
   max-height: 200px;
   pointer-events: none;

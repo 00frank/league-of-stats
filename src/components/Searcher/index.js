@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Logo from '../../assets/banner.png'
 import { Grid, Search } from 'semantic-ui-react'
 import retrieveListData from '../../utils/championsData'
+import ChampionsContext from '../../contexts/ChampionsContext'
 import './Searcher.css'
 
-export default function Searcher({ champions }) {
-  let data = retrieveListData(champions);
+export default function Searcher() {
   const [isLoading, setIsLoading] = useState(false)
   const [results, setResults] = useState([])
   const [value, setValue] = useState("")
+
+  const champions = retrieveListData(useContext(ChampionsContext).champions)
 
   const handleChampionSearch = (e) => {
     setValue(e.target.value)
@@ -18,7 +20,7 @@ export default function Searcher({ champions }) {
       setIsLoading(false)
     } else {
       setTimeout(() => {
-        let results = data.filter(c => c.title.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1).splice(0, 6)
+        let results = champions.filter(c => c.title.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1).splice(0, 6)
         setResults(results)
         setIsLoading(false);
       }, 300)
@@ -40,9 +42,8 @@ export default function Searcher({ champions }) {
             results={results}
             noResultsMessage="No hay resultados 😥"
             value={value}
-            className="test"
             fluid
-            />
+          />
         </div>
       </Grid.Column>
       <Grid.Column width={4}>
