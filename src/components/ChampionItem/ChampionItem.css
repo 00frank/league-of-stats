@@ -1,0 +1,53 @@
+.champion-card {
+  display: grid !important;
+  grid-template-rows: 1fr 3fr;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: #000000;
+  max-width: 45%;
+  margin-bottom: 1rem;
+}
+
+.champion-name-tag {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.champion-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.champion-tag {
+  display: block;
+  padding: 2px 5px;
+  background-color: rgba(191, 177, 172, 0.5);
+  margin-top: 2px;
+  border-radius: 10%;
+}
+
+.champion-tag-placeholder {
+  display: block;
+  padding: 2px 5px;
+  background-color: rgba(191, 177, 172, 0.5);
+  width: 4rem;
+  margin-top: 2px;
+  border-radius: 10%;
+}
+
+
+div.champion-name > span > div,
+div.champion-info-lanes div.ui.placeholder {
+  height: 1.2rem;
+}
+
+.champion-info-image img{
+  width: 50px;
+  height: 50px;
+}
+
+div.champion-info-image div.image {
+  width: 50px;
+  height: 50px !important;
+}

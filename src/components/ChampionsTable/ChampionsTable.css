@@ -1,0 +1,8 @@
+.champions-table {
+  width: 90%;
+  justify-content: space-evenly !important;
+}
+
+.ui.centered.doubling.five.column.grid.champions-table {
+  margin: 1rem auto;
+}
