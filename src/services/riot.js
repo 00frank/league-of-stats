@@ -16,10 +16,10 @@
 
 const Constants = {
   VERSION_URL: "https://ddragon.leagueoflegends.com/api/versions.json",
-  CHAMPIONS_URL: "http://ddragon.leagueoflegends.com/cdn/{version}/data/es_AR/champion.json",
-  CHAMPION_LOADING_IMG_URL: "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/",
-  CHAMPION_IMG_URL: "http://ddragon.leagueoflegends.com/cdn/{version}/img/champion/",
-  CHAMPION_INFO_URL: "http://ddragon.leagueoflegends.com/cdn/{version}/data/es_AR/champion/"
+  CHAMPIONS_URL: "https://ddragon.leagueoflegends.com/cdn/{version}/data/es_AR/champion.json",
+  CHAMPION_LOADING_IMG_URL: "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/",
+  CHAMPION_IMG_URL: "https://ddragon.leagueoflegends.com/cdn/{version}/img/champion/",
+  CHAMPION_INFO_URL: "https://ddragon.leagueoflegends.com/cdn/{version}/data/es_AR/champion/"
 }
 
 async function getGameVersion() {
@@ -33,12 +33,12 @@ async function getChampionsURL(gameVersion) {
 }
 
 function replaceVersion(url, version) {
-  return url.replace("{version}", version)
+  return url.replace("{version}", version);
 }
 
 function parseChampionsToArray(championsObj) {
   let array = [];
-  let keys = Object.keys(championsObj.data)
+  let keys = Object.keys(championsObj.data);
   keys.forEach(k => {
     array.push({ ...championsObj.data[k] })
   })
@@ -51,9 +51,9 @@ function parseChampionsToArray(championsObj) {
 async function getChampions() {
   let version = await getGameVersion();
   let url = await getChampionsURL(version);
-  let resp = await fetch(url)
-  let data = await resp.json()
-  let champions = parseChampionsToArray(data)
+  let resp = await fetch(url);
+  let data = await resp.json();
+  let champions = parseChampionsToArray(data);
   return champions;
 }
 
