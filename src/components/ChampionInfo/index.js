@@ -19,6 +19,14 @@ export default function ChampionInfo({ champion }) {
   const { portalDispatch } = useContext(ChampionsContext)
   const [data, setData] = useState({})
 
+  useEffect(() => {
+    const body = document.querySelector('body');
+    body.style.overflow = 'hidden' ;
+    return () => {
+      body.style.overflow = '';
+    }
+  }, [])
+
   return (
     <div className="champion-info-portal">
       {champion &&
