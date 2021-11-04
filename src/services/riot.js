@@ -17,7 +17,9 @@
 const Constants = {
   VERSION_URL: "https://ddragon.leagueoflegends.com/api/versions.json",
   CHAMPIONS_URL: "http://ddragon.leagueoflegends.com/cdn/{version}/data/es_AR/champion.json",
-  CHAMPION_IMG_URL: "http://ddragon.leagueoflegends.com/cdn/{version}/img/champion/"
+  CHAMPION_LOADING_IMG_URL: "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/",
+  CHAMPION_IMG_URL: "http://ddragon.leagueoflegends.com/cdn/{version}/img/champion/",
+  CHAMPION_INFO_URL: "http://ddragon.leagueoflegends.com/cdn/{version}/data/es_AR/champion/"
 }
 
 async function getGameVersion() {
