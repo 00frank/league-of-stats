@@ -3,14 +3,25 @@ import Logo from '../../assets/banner.png'
 import { Grid, Search } from 'semantic-ui-react'
 import retrieveListData from '../../utils/championsData'
 import ChampionsContext from '../../contexts/ChampionsContext'
+import { Constants, replaceVersion } from '../../services/riot'
+import { Types } from '../../reducers/portalReducer'
 import './Searcher.css'
 
 export default function Searcher() {
-  const [isLoading, setIsLoading] = useState(false)
-  const [results, setResults] = useState([])
-  const [value, setValue] = useState("")
+  const context = useContext(ChampionsContext);
+  const [isLoading, setIsLoading] = useState(false);
+  const [results, setResults] = useState([]);
+  const [value, setValue] = useState("");
 
-  const champions = retrieveListData(useContext(ChampionsContext).champions)
+  const champions = retrieveListData(context.champions);
+  const { portalDispatch } = context;
+
+  const openChampionInfo = async (e, search) => {
+    let champion = search.result;
+    let resp = await fetch(replaceVersion(Constants.CHAMPION_INFO_URL, champion.version) + champion.id + '.json');
+    let data = await resp.json();
+    portalDispatch({ type: Types.OPEN_PORTAL, champion: {...data.data[champion.id], version: data.version } })
+  }
 
   const handleChampionSearch = (e) => {
     setValue(e.target.value)
@@ -41,6 +52,7 @@ export default function Searcher() {
             onSearchChange={handleChampionSearch}
             results={results}
             noResultsMessage="No hay resultados 😥"
+            onResultSelect={openChampionInfo}
             value={value}
             fluid
           />
