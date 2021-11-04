@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/league-of-stats/static/css/main.013d16c3.chunk.css",
+    "main.js": "/league-of-stats/static/js/main.6e9573e6.chunk.js",
+    "main.js.map": "/league-of-stats/static/js/main.6e9573e6.chunk.js.map",
+    "runtime-main.js": "/league-of-stats/static/js/runtime-main.53297fef.js",
+    "runtime-main.js.map": "/league-of-stats/static/js/runtime-main.53297fef.js.map",
+    "static/css/2.beda3d1d.chunk.css": "/league-of-stats/static/css/2.beda3d1d.chunk.css",
+    "static/js/2.0b4f0c80.chunk.js": "/league-of-stats/static/js/2.0b4f0c80.chunk.js",
+    "static/js/2.0b4f0c80.chunk.js.map": "/league-of-stats/static/js/2.0b4f0c80.chunk.js.map",
+    "index.html": "/league-of-stats/index.html",
+    "static/css/2.beda3d1d.chunk.css.map": "/league-of-stats/static/css/2.beda3d1d.chunk.css.map",
+    "static/css/main.013d16c3.chunk.css.map": "/league-of-stats/static/css/main.013d16c3.chunk.css.map",
+    "static/js/2.0b4f0c80.chunk.js.LICENSE.txt": "/league-of-stats/static/js/2.0b4f0c80.chunk.js.LICENSE.txt",
+    "static/media/banner.0b3d950e.png": "/league-of-stats/static/media/banner.0b3d950e.png",
+    "static/media/semantic.min.css": "/league-of-stats/static/media/outline-icons.ddae9b1b.woff",
+    "static/media/index.css": "/league-of-stats/static/media/rockstar.704a10ce.otf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53297fef.js",
+    "static/css/2.beda3d1d.chunk.css",
+    "static/js/2.0b4f0c80.chunk.js",
+    "static/css/main.013d16c3.chunk.css",
+    "static/js/main.6e9573e6.chunk.js"
+  ]
+}
