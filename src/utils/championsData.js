@@ -8,10 +8,19 @@
 import { Constants, replaceVersion } from '../services/riot'
 import { Champion } from '../services/riot'; // eslint-disable-line no-unused-vars
 
-export function getChampionImageURL(champion) {
+/**
+ * @param {Champion} champion
+ * @returns {URL}
+ */
+
+function getChampionImageURL(champion) {
   let gameVersion = champion.version
-  let championImageFile = champion.image?.full
+  let championImageFile = champion.image.full
   return replaceVersion(Constants.CHAMPION_IMG_URL, gameVersion) + championImageFile
+}
+
+function getChampionLoadingImageURL(champion) {
+  return Constants.CHAMPION_LOADING_IMG_URL + champion.id + '_0.jpg'
 }
 
 /**
@@ -24,10 +33,13 @@ function retrieveListData(champions) {
     data.push({
       title: c.name,
       description: c.title.charAt(0).toUpperCase() + c.title.slice(1),
-      image: getChampionImageURL(c)
+      image: getChampionImageURL(c),
+      version: c.version,
+      id: c.id
     })
   });
   return data
 }
 
+export { getChampionImageURL, getChampionLoadingImageURL }
 export default retrieveListData
