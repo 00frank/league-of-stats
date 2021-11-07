@@ -17,7 +17,7 @@
 const Constants = {
   VERSION_URL: "https://ddragon.leagueoflegends.com/api/versions.json",
   CHAMPIONS_URL: "https://ddragon.leagueoflegends.com/cdn/{version}/data/es_AR/champion.json",
-  CHAMPION_LOADING_IMG_URL: "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/",
+  CHAMPION_LOADING_IMG_URL: "https://lol-static-images.herokuapp.com/",
   CHAMPION_IMG_URL: "https://ddragon.leagueoflegends.com/cdn/{version}/img/champion/",
   CHAMPION_INFO_URL: "https://ddragon.leagueoflegends.com/cdn/{version}/data/es_AR/champion/"
 }

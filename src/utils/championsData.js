@@ -20,7 +20,7 @@ function getChampionImageURL(champion) {
 }
 
 function getChampionLoadingImageURL(champion) {
-  return Constants.CHAMPION_LOADING_IMG_URL + champion.id + '_0.jpg'
+  return Constants.CHAMPION_LOADING_IMG_URL + champion.id + '.png'
 }
 
 /**
