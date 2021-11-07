@@ -49,7 +49,7 @@ export default function ChampionItem({ champion }) {
             {champion.tags.map((tag, i) => <span className="champion-tag" key={i}>{tag}</span>)}
           </div>
           <div className="champion-info-image">
-            <img src={getChampionImageURL(champion)} alt={champion.name} />
+            <img src={getChampionImageURL(champion)} alt={champion.name} loading="lazy" />
           </div>
         </div>
       </Grid.Column>

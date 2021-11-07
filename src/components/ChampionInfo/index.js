@@ -48,7 +48,7 @@ export default function ChampionInfo({ champion }) {
               {champion.tags.map((tag, i) => <span className="champion-tag" key={i}>{tag}</span>)}
             </div>
             <Transition>
-              <img style={{ alignSelf: "center" }} src={getChampionLoadingImageURL(champion)} alt={champion.name} />
+              <img style={{ alignSelf: "center", width: "50%" }} src={getChampionLoadingImageURL(champion)} alt={champion.name} loading="lazy" />
             </Transition>
           </div>
           <div className="champion-info-stats">
