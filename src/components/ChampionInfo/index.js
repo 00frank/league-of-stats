@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import ChampionsContext from '../../contexts/ChampionsContext'
 import { Types } from '../../reducers/portalReducer'
 import { Header, Icon, Transition } from 'semantic-ui-react'
+import getTransitionProperties from '../../utils/getTransitionProperties'
 import './ChampionInfo.css'
 
 /**
@@ -15,13 +16,15 @@ import './ChampionInfo.css'
  */
 export default function ChampionInfo({ champion }) {
   const { portalDispatch } = useContext(ChampionsContext)
-  const [data, setData] = useState({})
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     const body = document.querySelector('body');
-    body.style.overflow = 'hidden' ;
+    body.style.overflow = 'hidden';
+    setVisible(true);
     return () => {
       body.style.overflow = '';
+      setVisible(false);
     }
   }, [])
 
@@ -45,7 +48,7 @@ export default function ChampionInfo({ champion }) {
             <div className="champion-info-simple-tags">
               {champion.tags.map((tag, i) => <span className="champion-tag" key={i}>{tag}</span>)}
             </div>
-            <Transition>
+            <Transition {...{ ...getTransitionProperties(), visible: visible }}>
               <img style={{ alignSelf: "center", width: "50%" }} src={require(`../../assets/champions/${champion.id}.png`).default} alt={champion.name} loading="lazy" />
             </Transition>
           </div>
