@@ -2,9 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import ChampionsContext from '../../contexts/ChampionsContext'
 import { Types } from '../../reducers/portalReducer'
 import { Header, Icon, Transition } from 'semantic-ui-react'
-import { Constants, replaceVersion } from '../../services/riot'
 import './ChampionInfo.css'
-import { getChampionLoadingImageURL } from '../../utils/championsData'
 
 /**
  * 
@@ -48,11 +46,10 @@ export default function ChampionInfo({ champion }) {
               {champion.tags.map((tag, i) => <span className="champion-tag" key={i}>{tag}</span>)}
             </div>
             <Transition>
-              <img style={{ alignSelf: "center", width: "50%" }} src={getChampionLoadingImageURL(champion)} alt={champion.name} loading="lazy" />
+              <img style={{ alignSelf: "center", width: "50%" }} src={require(`../../assets/champions/${champion.id}.png`).default} alt={champion.name} loading="lazy" />
             </Transition>
           </div>
           <div className="champion-info-stats">
-
           </div>
         </>}
     </div>
